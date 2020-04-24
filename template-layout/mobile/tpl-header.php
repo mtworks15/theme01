@@ -23,7 +23,7 @@
                         <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
                             <li>
-                                <a href="#">Home 1</a>
+                                <a href="http://localhost/testsite/">Home 1</a>
                             </li>
                             <li>
                                 <a href="#">Home 2</a>
@@ -37,7 +37,7 @@
                         <a href="#">About</a>
                     </li>
                     <li>
-                        <a href="#">Treatments</a>
+                        <a href="http://localhost/testsite/treatments/">Treatments</a>
                     </li>
                     <li>
                         <a href="#plasticSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Plastic Surgery</a>

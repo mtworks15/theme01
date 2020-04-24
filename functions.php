@@ -23,6 +23,9 @@ function load_stylesheets() {
     wp_register_style('custom', get_template_directory_uri() . '/assets/css/custom.css', array(), 1, 'all');
     wp_enqueue_style('custom');
 
+    wp_register_style('treatments', get_template_directory_uri() . '/assets/css/treatments.css', array(), 1, 'all');
+    wp_enqueue_style('treatments');
+
     if ( wp_mobile_detect() ) {
         wp_register_style('mobile_style', get_template_directory_uri() . '/template-layout/mobile/css/style.css', array(), 1, 'all');
         wp_enqueue_style('mobile_style');

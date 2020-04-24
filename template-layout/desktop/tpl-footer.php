@@ -5,9 +5,9 @@
                         <img src="<?php bloginfo('template_directory') ?>/assets/images/logo_footer.png" id="footerLogo">
                     </div>
                     <div class="col-12 col-sm-6 col-md-3 col-lg-3 col-xl-2 footer-items-left" id="footerMenu">
-                        <a href="#"><p>HOME</p></a>
+                        <a href="http://localhost/testsite/"><p>HOME</p></a>
                         <a href="#"><p>ABOUT</p></a>
-                        <a href="#"><p>TREATMENTS</p></a>
+                        <a href="http://localhost/testsite/treatments/"><p>TREATMENTS</p></a>
                         <a href="#"><p>PLASTIC SURGERY</p></a>
                         <a href="#"><p>OUR DOCTORS</p></a>
                         <a href="#"><p>PROMOTIONS</p></a>

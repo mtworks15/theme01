@@ -14,9 +14,9 @@
                     <img src="<?php bloginfo('template_directory') ?>/assets/images/logo_header.png" id="hLogo"/>
                 </div>
                 <div id="menuWrapper" class="d-flex justify-content-center">
-                    <a href="#"><p>HOME</p></a>
+                    <a href="http://localhost/testsite/"><p>HOME</p></a>
                     <a href="#"><p>ABOUT</p></a>
-                    <a href="#"><p>TREATMENTS</p></a>
+                    <a href="http://localhost/testsite/treatments/"><p>TREATMENTS</p></a>
                     <a href="#"><p>PLASTIC SURGERY</p></a>
                     <a href="#"><p>OUR DOCTORS</p></a>
                     <a href="#"><p>PROMOTIONS</p></a>
@@ -38,7 +38,7 @@
                         <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
                             <li>
-                                <a href="#">Home 1</a>
+                                <a href="http://localhost/testsite/">Home 1</a>
                             </li>
                             <li>
                                 <a href="#">Home 2</a>
@@ -52,7 +52,7 @@
                         <a href="#">About</a>
                     </li>
                     <li>
-                        <a href="#">Treatments</a>
+                        <a href="http://localhost/testsite/treatments/">Treatments</a>
                     </li>
                     <li>
                         <a href="#plasticSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Plastic Surgery</a>

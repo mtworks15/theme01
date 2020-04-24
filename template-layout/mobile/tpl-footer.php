@@ -3,9 +3,9 @@
                 <div class="row">
                     <div class="col-12" id="footerMenu">
                         <div class="text-center">
-                            <a href="#"><p>HOME</p></a>
+                            <a href="http://localhost/testsite/"><p>HOME</p></a>
                             <a href="#"><p>ABOUT</p></a>
-                            <a href="#"><p>TREATMENTS</p></a>
+                            <a href="http://localhost/testsite/treatments/"><p>TREATMENTS</p></a>
                             <a href="#"><p>PLASTIC SURGERY</p></a>
                             <a href="#"><p>OUR DOCTORS</p></a>
                             <a href="#"><p>PROMOTIONS</p></a>

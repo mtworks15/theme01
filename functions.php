@@ -1,5 +1,8 @@
 <?php
 
+
+/* Mobile Detection */
+
 require_once(get_template_directory() . '/inc/mobile-detect/Mobile_Detect.php');
 
 function wp_mobile_detect() {
@@ -14,6 +17,8 @@ function wp_mobile_detect() {
 
 }
 
+
+/* Load Stylesheets */
 
 function load_stylesheets() {
 
@@ -39,6 +44,8 @@ function load_stylesheets() {
 add_action('wp_enqueue_scripts', 'load_stylesheets');
 
 
+/* Load Scripts */
+
 function addjs() {
 
     wp_register_script('jquery', '', array(), '', true);
@@ -49,6 +56,9 @@ function addjs() {
 
     wp_register_script('custom', get_template_directory_uri() . '/assets/js/custom.js', array(), '', true);
     wp_enqueue_script('custom');
+
+    wp_register_script('doubletaptogojs', get_template_directory_uri() . '/assets/js/doubletaptogo.min.js', array(), '', true);
+    wp_enqueue_script('doubletaptogojs');
 
     if ( wp_mobile_detect() ) {
         wp_register_script('mobile_scripts', get_template_directory_uri() . '/template-layout/mobile/js/scripts.js', array(), '', true);
@@ -61,3 +71,18 @@ function addjs() {
 }
 
 add_action('wp_enqueue_scripts', 'addjs');
+
+
+/* Theme Options */
+
+add_theme_support('menus');
+
+
+/* Navigation Menus */
+
+register_nav_menus(
+    array(
+        'top-menu' => 'Top Menu Location',
+        'mobile-menu' => 'Mobile Menu Location',
+    )
+);

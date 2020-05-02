@@ -55,16 +55,52 @@ a:link, a:visited, a:hover, a:active, a:focus {
     max-width: 130px !important;
 }
 
-#menuWrapper a {
-    margin: 0 25px 0;
+#menuWrapper .top-bar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
 }
 
-#menuWrapper p {
-    margin: 0;
+#menuWrapper .top-bar li a {
+    padding: 0 25px;
+    text-transform: uppercase;
     transition: font-size 0.5s ease;
 }
 
-.menu-sticky p {
+#menuWrapper .top-bar li:first-child a {
+    padding-left: 0;
+}
+
+#menuWrapper .top-bar li:last-child a {
+    padding-right: 0;
+}
+
+#menuWrapper .top-bar li.menu-item-has-children ul.sub-menu {
+    list-style-type: none;
+    margin: 18px 0;
+    padding: 10px 25px;
+    background-color: rgb(221, 208, 186);
+    border-radius: 0px 0px 10px 10px;
+    transition: background-color 0.5s ease;
+    display: none;
+}
+
+#menuWrapper.menu-sticky .top-bar li.menu-item-has-children ul.sub-menu {
+    margin: 10px 0;
+    background-color: rgb(243, 243, 243);
+}
+
+#menuWrapper .top-bar li.menu-item-has-children:hover ul.sub-menu {
+    display: block;
+}
+
+#menuWrapper .top-bar li.menu-item-has-children ul.sub-menu li a {
+    margin: 0;
+    padding: 0;
+}
+
+.menu-sticky .top-bar li a {
     font-size: 14px;
 }
 
@@ -296,8 +332,17 @@ a.view-more {
         max-width: 150px;
     }
 
-    #menuWrapper a {
-        margin: 0 10px 0;
+    #menuWrapper .top-bar li a {
+        padding: 0 10px;
+    }
+
+    #menuWrapper .top-bar li.menu-item-has-children ul.sub-menu {
+        margin: 15px 0;
+        padding: 10px 9px;
+    }
+
+    #menuWrapper.menu-sticky .top-bar li.menu-item-has-children ul.sub-menu {
+        margin: 10px 0;
     }
 
     #textContent h1 {
@@ -374,6 +419,11 @@ a.view-more {
         font-size: 30px;
     }
 
+    #sidenav ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
     #sidenav ul li a {
         display: block;
         color: #fff;
@@ -385,12 +435,11 @@ a.view-more {
         background-color: #007bff;
     }
 
-    #sidenav ul li.active > a, a[aria-expanded="true"] {
+    #sidenav ul li.active > a {
         background-color: #333;
     }
 
     #sidenav ul ul a {
-        background-color: #333;
         padding-left: 45px;
         font-size: 14px;
     }
@@ -485,6 +534,11 @@ a.view-more {
         font-size: 30px;
     }
 
+    #sidenav ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
     #sidenav ul li a {
         display: block;
         color: #fff;
@@ -496,12 +550,11 @@ a.view-more {
         background-color: #007bff;
     }
 
-    #sidenav ul li.active > a, a[aria-expanded="true"] {
+    #sidenav ul li.active > a {
         background-color: #333;
     }
 
     #sidenav ul ul a {
-        background-color: #333;
         padding-left: 45px;
         font-size: 14px;
     }
@@ -633,6 +686,11 @@ a.view-more {
         font-size: 25px;
     }
 
+    #sidenav ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
     #sidenav ul li a {
         display: block;
         color: #fff;
@@ -644,12 +702,11 @@ a.view-more {
         background-color: #007bff;
     }
 
-    #sidenav ul li.active > a, a[aria-expanded="true"] {
+    #sidenav ul li.active > a {
         background-color: #333;
     }
 
     #sidenav ul ul a {
-        background-color: #333;
         padding-left: 45px;
         font-size: 12px;
     }

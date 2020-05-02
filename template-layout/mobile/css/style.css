@@ -315,6 +315,11 @@ a.view-more {
         font-size: 30px;
     }
 
+    #sidenav ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
     #sidenav ul li a {
         display: block;
         color: #fff;
@@ -326,12 +331,11 @@ a.view-more {
         background-color: #007bff;
     }
 
-    #sidenav ul li.active > a, a[aria-expanded="true"] {
+    #sidenav ul li.active > a {
         background-color: #333;
     }
 
     #sidenav ul ul a {
-        background-color: #333;
         padding-left: 45px;
         font-size: 14px;
     }
@@ -443,6 +447,11 @@ a.view-more {
         font-size: 25px;
     }
 
+    #sidenav ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
     #sidenav ul li a {
         display: block;
         color: #fff;
@@ -454,12 +463,11 @@ a.view-more {
         background-color: #007bff;
     }
 
-    #sidenav ul li.active > a, a[aria-expanded="true"] {
+    #sidenav ul li.active > a {
         background-color: #333;
     }
 
     #sidenav ul ul a {
-        background-color: #333;
         padding-left: 45px;
         font-size: 12px;
     }

@@ -8,6 +8,10 @@ a:link, a:visited, a:hover, a:active, a:focus {
     transition: all 0.2s;
 }
 
+#pageNavbarOverlay {
+    height: 300px;
+}
+
 #sectionOne, #sectionFour {
     height: 100%;
 }
@@ -316,6 +320,10 @@ a.view-more {
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
+    #pageNavbarOverlay {
+        height: 245px;
+    }
+
     #sectionOne, #sectionFour {
         height: auto;
     }
@@ -375,6 +383,10 @@ a.view-more {
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
+    #pageNavbarOverlay {
+        height: 0;
+    }
+
     #sectionOne, #sectionFour {
         height: auto;
     }
@@ -490,6 +502,10 @@ a.view-more {
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
+    #pageNavbarOverlay {
+        height: 0;
+    }
+
     #sectionOne, #sectionFour {
         height: auto;
     }
@@ -639,6 +655,10 @@ a.view-more {
 }
 
 @media (max-width: 575px) {
+    #pageNavbarOverlay {
+        height: 0;
+    }
+    
     #sectionOne, #sectionFour {
         height: auto;
     }

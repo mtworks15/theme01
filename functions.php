@@ -25,6 +25,9 @@ function load_stylesheets() {
     wp_register_style('bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), 1, 'all');
     wp_enqueue_style('bootstrap');
 
+    wp_register_style('main_custom', get_template_directory_uri() . '/assets/css/main-custom.css', array(), 1, 'all');
+    wp_enqueue_style('main_custom');
+
     if ( wp_mobile_detect() ) {
         wp_register_style('mobile_style', get_template_directory_uri() . '/template-layout/mobile/css/style.css', array(), 1, 'all');
         wp_enqueue_style('mobile_style');
@@ -103,3 +106,12 @@ register_nav_menus(
         'mobile-menu' => 'Mobile Menu Location',
     )
 );
+
+
+/* Custom Excerpt Length */
+
+function custom_excerpt($limit) {
+    $excerpt = get_the_excerpt(); // need to declare in a variable to avoid uncaught error
+    $result = wp_trim_words($excerpt, $limit);
+    return $result;
+}

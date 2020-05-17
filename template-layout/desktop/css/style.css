@@ -2,12 +2,6 @@ body, html, #mainContainer {
     margin: 0;
 }
 
-a:link, a:visited, a:hover, a:active, a:focus {
-    color: #000;
-    text-decoration: none;
-    transition: all 0.2s;
-}
-
 #pageNavbarOverlay {
     height: 300px;
 }
@@ -57,6 +51,13 @@ a:link, a:visited, a:hover, a:active, a:focus {
 
 .hlogo-img {
     max-width: 130px !important;
+}
+
+#menuWrapper a,
+#footerMenu a {
+    color: #000;
+    text-decoration: none;
+    transition: all 0.2s;
 }
 
 #menuWrapper .top-bar {

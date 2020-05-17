@@ -1,0 +1,12 @@
+/* cards with equal height and width */
+
+.card-row > div[class*='col-'] {
+    display: flex;
+    flex: 1 0 auto;
+}
+
+/* no borders */
+
+.no-border {
+    border: none;
+}

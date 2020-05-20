@@ -115,3 +115,14 @@ function custom_excerpt($limit) {
     $result = wp_trim_words($excerpt, $limit);
     return $result;
 }
+
+
+/* Posts Per Page */
+
+function set_posts_per_page($cat_name, $limit) {
+    $query = new WP_Query(array( 
+        'category_name' => $cat_name, 
+        'posts_per_page' => $limit 
+    ));
+    return $query;
+}

@@ -79,6 +79,24 @@
             <?php endif; ?>
         </div>
     </div>
+    <div id="recentPosts">
+        <div class="container">
+            <?php 
+                $catName = 'facial';
+                $postsPerPage = 3;
+                $excerptLength = 25;
+
+                $arrRecentPosts = [
+                    'catName' => $catName,
+                    'postsPerPage' => $postsPerPage,
+                    'excerptLength' => $excerptLength
+                ];
+
+                set_query_var( 'recentPostsVar', $arrRecentPosts ); 
+            ?>
+            <?php get_template_part('template-parts/page/content', 'recent'); ?>
+        </div>
+    </div>
     <div id="sectionSix">
         <div class="container">
             <h1 class="s6-title"><?php echo $sectionSix['main_title'] ?></h1>

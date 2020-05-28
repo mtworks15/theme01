@@ -2,7 +2,7 @@
 
     if ( is_category( 'blog' ) ) {
         $gridSetup = 'col-xl-4 col-lg-4 col-md-4 col-sm-6';
-        $postsPerPage = set_posts_per_page('blog', 5);
+        $postsPerPage = set_posts_per_page('blog', 3);
         $excerptLength = 55;
     } else if ( is_category( 'skin-care' ) ) {
         $gridSetup = 'col-xl-6 col-lg-6 col-md-6 col-sm-6';
@@ -11,7 +11,7 @@
     } else {
         $gridSetup = 'col-xl-4 col-lg-4 col-md-4 col-sm-6';
         $term = get_queried_object();
-        $postsPerPage = set_posts_per_page($term->slug, 3);
+        $postsPerPage = set_posts_per_page($term->slug, 1);
         $excerptLength = 20;
     }
 
@@ -34,3 +34,13 @@
     <?php endwhile; else: endif; ?>
     <?php wp_reset_postdata(); ?>
 </div>
+
+<script>
+    var posts_myajax = '<?php echo json_encode( $postsPerPage->query_vars ); ?>',
+        current_page_myajax = 1,
+        max_page_myajax = <?php echo $postsPerPage->max_num_pages ?>,
+        grid_setup = '<?php echo $gridSetup ?>',
+        excerpt_length = <?php echo $excerptLength ?>
+</script>
+
+<script src="<?php bloginfo('template_directory') ?>/assets/js/myloadmore.js"></script>

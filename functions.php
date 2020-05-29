@@ -96,6 +96,7 @@ add_action('wp_enqueue_scripts', 'page_stylesheets');
 /* Theme Options */
 
 add_theme_support('menus');
+add_theme_support('post-thumbnails');
 
 
 /* Navigation Menus */
@@ -106,6 +107,12 @@ register_nav_menus(
         'mobile-menu' => 'Mobile Menu Location',
     )
 );
+
+
+/* Custom Featured Image Sizes */
+
+add_image_size( 'img-lg', 1140, 600, true );
+add_image_size( 'img-sm', 500, 300, true);
 
 
 /* Custom Excerpt Length */

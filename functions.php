@@ -97,6 +97,7 @@ add_action('wp_enqueue_scripts', 'page_stylesheets');
 
 add_theme_support('menus');
 add_theme_support('post-thumbnails');
+add_theme_support('widgets');
 
 
 /* Navigation Menus */
@@ -113,6 +114,22 @@ register_nav_menus(
 
 add_image_size( 'img-lg', 1140, 600, true );
 add_image_size( 'img-sm', 500, 300, true);
+
+
+/* Register Sidebars */
+
+function my_sidebars() {
+    register_sidebar( 
+        array(
+            'name' => 'Page Sidebar',
+            'id' => 'page-sidebar',
+            'before_title' => '<h3 class="widget-title">',
+            'after_title' => '</h3>'
+        )
+    );
+}
+
+add_action('widgets_init', 'my_sidebars');
 
 
 /* Custom Excerpt Length */

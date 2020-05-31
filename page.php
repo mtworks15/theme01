@@ -5,6 +5,7 @@
         <div class="container mt-4 mb-5">
             <div class="row">
                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4">
+                    <div class="mt-3 mb-5"><?php get_search_form(); ?></div>
                     <?php if ( is_active_sidebar('page-sidebar') ): ?>
                         <?php dynamic_sidebar('page-sidebar'); ?>
                     <?php endif; ?>

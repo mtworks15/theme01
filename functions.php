@@ -114,6 +114,8 @@ register_nav_menus(
 
 add_image_size( 'img-lg', 1140, 600, true );
 add_image_size( 'img-sm', 500, 300, true);
+add_image_size( 'img-sm-square', 500, 500, false);
+add_image_size( 'img-xs-square', 300, 300, false);
 
 
 /* Register Sidebars */
@@ -130,6 +132,46 @@ function my_sidebars() {
 }
 
 add_action('widgets_init', 'my_sidebars');
+
+
+/* Register Custom Post Types */
+
+function cosmetics_post_type() {
+    $args = array(
+        'labels' => array(
+            'name' => 'Cosmetics',
+            'singular_name' => 'Cosmetic'
+        ),
+        'hierarchical' => true,
+        'public' => true,
+        'has_archive' => true,
+        'menu_icon' => 'dashicons-images-alt2',
+        'supports' => array('title', 'editor', 'thumbnail')
+        //'rewrite' => array('slug' => 'my-cosmetics'),
+    );
+
+    register_post_type( 'cosmetics', $args );
+}
+
+add_action('init', 'cosmetics_post_type');
+
+
+/* Register Taxonomy */
+
+function cosmetics_taxonomy() {
+    $args = array(
+        'labels' => array(
+            'name' => 'Brands',
+            'singular_name' => 'Brand'
+        ),
+        'hierarchical' => true,
+        'public' => true
+    );
+
+    register_taxonomy( 'brands', array('cosmetics'), $args );
+}
+
+add_action('init', 'cosmetics_taxonomy');
 
 
 /* Custom Excerpt Length */

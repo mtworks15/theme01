@@ -266,3 +266,24 @@ function misha_loadmore_ajax_handler(){
  
 add_action('wp_ajax_loadmore', 'misha_loadmore_ajax_handler'); // wp_ajax_{action}
 add_action('wp_ajax_nopriv_loadmore', 'misha_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
+
+
+/* Shortcodes */
+
+function latest_cosmetics($attr, $content = null, $tag = '') {
+    ob_start();
+    $title = '<h3 class="mt-5 mb-4">' . $content . '</h3>';
+    print_r($title);
+    set_query_var('attributes', $attr);
+    get_template_part('template-parts/post/latest', 'cosmetics');
+    return ob_get_clean();
+}
+
+add_shortcode( 'latest_cosmetics', 'latest_cosmetics' );
+
+function my_phone() {
+    $phone = '<a href="">3345 000 8745</a>';
+    return $phone;
+}
+
+add_shortcode( 'phone', 'my_phone' );

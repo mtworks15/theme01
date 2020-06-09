@@ -4,11 +4,11 @@
         <span>By <?php echo get_the_author_meta('nickname'); ?></span>
         <span> | <?php echo get_the_date(); ?> | </span>
         <?php
-        $categories = get_the_category();
-        foreach($categories as $cat): ?>
+        $terms = get_the_terms( $post->ID, 'brands' );
+        foreach($terms as $term): ?>
 
-            <a href="<?php echo get_category_link($cat->term_id); ?>">
-                <?php echo $cat->name; ?>
+            <a href="<?php echo get_term_link($term); ?>">
+                <?php echo $term->name; ?>
             </a>
 
         <?php endforeach; ?>
@@ -16,15 +16,7 @@
 
     <?php the_content(); ?>
 
-    <?php
-    $tags = get_the_tags();
-    if ($tags):
-    foreach($tags as $tag): ?>
-
-        <a href="<?php echo get_tag_link($tag->term_id); ?>" class="badge badge-success">
-            <?php echo $tag->name; ?>
-        </a>
-
-    <?php endforeach; endif; ?>
+    <p class="mb-0">Price: <?php the_field('price'); ?></p>
+    <p class="mb-0">Size: <?php the_field('size'); ?></p>
 
 <?php endwhile; else: endif; ?>

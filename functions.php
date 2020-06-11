@@ -287,3 +287,59 @@ function my_phone() {
 }
 
 add_shortcode( 'phone', 'my_phone' );
+
+
+/* Search Page Custom Search for Custom Post Type */
+
+function custom_search_query() {
+    $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+    $args = array(
+        'paged' => $paged, // for pagination
+        'post_type' => 'cosmetics',
+        'posts_per_page' => 1, // set to 0 if you want to display unlimited posts
+        'meta_query' => [
+            'relation' => 'AND', // if you want price_above and price_below as one condition
+        ],
+        'tax_query' => [],
+    );
+    
+    if ( isset($_GET['keyword']) ) {
+        if ( !empty($_GET['keyword']) ) {
+            $args['s'] = sanitize_text_field( $_GET['keyword'] ); // sanitize the value to prevent sql injections, for example if you type a keyword like this */ then it will convert into a harmless code
+        }
+    }
+    
+    if ( isset($_GET['brand']) ) {
+        if ( !empty($_GET['brand']) ) {
+            $args['tax_query'][] = array(
+                'taxonomy' => 'brands',
+                'field' => 'slug', // use the slug of each taxonomy term
+                'terms' => array( sanitize_text_field( $_GET['brand'] ) ), // search the taxonomy term
+            );
+        }
+    }
+    
+    if ( isset($_GET['price_above']) ) {
+        if ( !empty($_GET['price_above']) ) {
+            $args['meta_query'][] = array(
+                'key' => 'price',
+                'value' => sanitize_text_field( $_GET['price_above'] ),
+                'type' => 'numeric', // don't forget to set the data type
+                'compare' => '>='
+            );
+        }
+    }
+    
+    if ( isset($_GET['price_below']) ) {
+        if ( !empty($_GET['price_below']) ) {
+            $args['meta_query'][] = array(
+                'key' => 'price',
+                'value' => sanitize_text_field( $_GET['price_below'] ),
+                'type' => 'numeric', // don't forget to set the data type
+                'compare' => '<='
+            );
+        }
+    }
+
+    return new WP_Query($args);
+}

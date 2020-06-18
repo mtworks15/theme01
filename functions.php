@@ -101,6 +101,9 @@ add_action('wp_enqueue_scripts', 'page_stylesheets');
 add_theme_support('menus');
 add_theme_support('post-thumbnails');
 add_theme_support('widgets');
+add_theme_support( 'wc-product-gallery-zoom' );
+add_theme_support( 'wc-product-gallery-lightbox' );
+add_theme_support( 'wc-product-gallery-slider' );
 
 function mytheme_add_woocommerce_support() {
     add_theme_support( 'woocommerce' );
@@ -137,6 +140,15 @@ function my_sidebars() {
             'before_title' => '<h3 class="widget-title">',
             'after_title' => '</h3>'
         )
+    );
+
+    register_sidebar( 
+        array(
+            'name' => 'Woocommerce Sidebar',
+            'id' => 'woocommerce-sidebar',
+            'before_title' => '<h3 class="widget-title">',
+            'after_title' => '</h3>'
+        ) 
     );
 }
 

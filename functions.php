@@ -364,3 +364,18 @@ function custom_search_query() {
 
     return new WP_Query($args);
 }
+
+
+/* Woocommerce Hooks */
+
+function custom_woo_template_loop_category_title() {
+    $terms = get_the_terms( $post->ID, 'product_cat' );
+
+    foreach( $terms as $term ) {
+        echo '<a href="' . get_term_link($term) . '">';
+        echo $term->name;
+        echo '</a>';
+    }
+}
+
+add_action('woocommerce_shop_loop_item_title', 'custom_woo_template_loop_category_title', 9);

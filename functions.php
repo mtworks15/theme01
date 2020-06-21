@@ -368,6 +368,7 @@ function custom_search_query() {
 
 /* Woocommerce Hooks */
 
+/* Add Category Title above the Product Title on the Shop or Archive Page */
 function custom_woo_template_loop_category_title() {
     $terms = get_the_terms( $post->ID, 'product_cat' );
 
@@ -379,3 +380,7 @@ function custom_woo_template_loop_category_title() {
 }
 
 add_action('woocommerce_shop_loop_item_title', 'custom_woo_template_loop_category_title', 9);
+
+/* Remove Add to Cart Button on the Shop or Archive Page */
+
+remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);

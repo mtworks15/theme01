@@ -1,4 +1,113 @@
+/* Input fields width to 100% on cart and checkout page */
 .woocommerce .woocommerce-input-wrapper {
     display: block;
     width: 100%;
+}
+
+/* Product Title on shop page */
+.woocommerce ul.products li.product .woocommerce-loop-product__title {
+    font-size: 1.1em;
+}
+
+/* Product Category on shop page */
+.woocommerce ul.products li.product a.custom-woo-product-category {
+    color: #e8b280;
+}
+
+/* Product Price on shop page */
+.woocommerce ul.products li.product .price {
+    color: #000;
+    font-size: .950em;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+/* Product Star Rating on shop page */
+.woocommerce ul.products li.product .star-rating {
+    color: #f18704;
+}
+
+/* Container of each Product on shop page */
+.woocommerce ul.products li.product, 
+.woocommerce-page ul.products li.product {
+    border: 1px solid #eee;
+}
+
+/* Contents of each Product on shop page */
+.woocommerce ul.products li.product > *:not(.woocommerce-LoopProduct-link) {
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+}
+
+/* Product Container on shop page */
+.woocommerce ul.products,
+.woocommerce-page ul.products {
+    /* to have equal height regardless of its content */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Product Summary on shop page */
+.custom-woo-product-summary {
+    /* to make contents centered */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Product Title Link on shop page */
+.woocommerce ul.products li.product .custom-woo-product-summary .woocommerce-LoopProduct-link {
+    color: #000;
+}
+
+/* Product Sale Label on shop page */
+.woocommerce span.onsale {
+    min-height: 3em;
+    min-width: 3em;
+    line-height: 3em;
+    padding: 0;
+    font-size: 1em;
+    font-weight: 400;
+    background-color: #cc4242;
+}
+
+
+/* media queries */
+
+@media (max-width: 767px) and (min-width: 576px) {
+
+    /* Product Column Class on shop page */
+    .woocommerce ul.products[class*=columns-] li.product, 
+    .woocommerce-page ul.products[class*=columns-] li.product {
+        /* to have space between columns, usually if having 2 column layout */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+}
+
+@media (max-width: 575px) {
+
+    /* Product Container on shop page */
+    .woocommerce ul.products,
+    .woocommerce-page ul.products {
+        /* to make it one column on mobile portrait */
+        /* flex-wrap: nowrap;
+        flex-direction: column; 
+        justify-content: center ; */
+    }
+
+    /* Product Column Class on shop page */
+    .woocommerce ul.products[class*=columns-] li.product, 
+    .woocommerce-page ul.products[class*=columns-] li.product {
+        /* to make it one column on mobile portrait */
+        /* width: 100%; */
+
+        /* to have space between columns, usually if having 2 column layout */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
 }

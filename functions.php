@@ -373,7 +373,7 @@ function custom_woo_template_loop_category_title() {
     $terms = get_the_terms( $post->ID, 'product_cat' );
 
     foreach( $terms as $term ) {
-        echo '<a href="' . get_term_link($term) . '">';
+        echo '<a href="' . get_term_link($term) . '" class="custom-woo-product-category">';
         echo $term->name;
         echo '</a>';
     }
@@ -381,6 +381,29 @@ function custom_woo_template_loop_category_title() {
 
 add_action('woocommerce_shop_loop_item_title', 'custom_woo_template_loop_category_title', 9);
 
-/* Remove Add to Cart Button on the Shop or Archive Page */
+/* Product Summary Div Open on the Shop or Archive Page */
+function custom_woo_template_loop_product_summary_div_open() {
+    echo '<div class="custom-woo-product-summary">';
+}
 
+add_action('woocommerce_shop_loop_item_title', 'custom_woo_template_loop_product_summary_div_open', 8);
+
+/* Product Summary Div Close on the Shop or Archive Page */
+function custom_woo_template_loop_product_summary_div_close() {
+    echo '</div>';
+}
+
+add_action('woocommerce_after_shop_loop_item_title', 'custom_woo_template_loop_product_summary_div_close', 11);
+
+/* Remove Add to Cart Button on the Shop or Archive Page */
 remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);
+
+/* Reposition Product Link Close after Product Thumbnail on the Shop or Archive Page */
+remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5);
+add_action('woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_link_close', 11);
+
+/* Add Product Link on the Product Title on the Shop or Archive Page */
+remove_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10);
+add_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 11);
+add_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_link_open', 10);
+add_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_link_close', 12);

@@ -73,6 +73,29 @@
     background-color: #cc4242;
 }
 
+/* Pagination on shop page */
+.woocommerce nav.woocommerce-pagination ul {
+    border: 0;
+    text-align: center;
+}
+.woocommerce nav.woocommerce-pagination ul li {
+    margin: 0 5px 5px 0;
+    border: 1px solid #cc4242;
+}
+.woocommerce nav.woocommerce-pagination ul li a, 
+.woocommerce nav.woocommerce-pagination ul li span {
+    padding: .75em;
+    min-width: 2.5em;
+    color: #cc4242;
+    transition: all 0.3s;
+}
+.woocommerce nav.woocommerce-pagination ul li a:focus, 
+.woocommerce nav.woocommerce-pagination ul li a:hover, 
+.woocommerce nav.woocommerce-pagination ul li span.current {
+    background: #cc4242;
+    color: #f9f9f9;
+}
+
 
 /* media queries */
 

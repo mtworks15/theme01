@@ -138,6 +138,28 @@
     display: none;
 }
 
+/* Sidebar Product Category Widget */
+.woocommerce ul.woocommerce-sidebar li.widget ul.product-categories {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.woocommerce ul.woocommerce-sidebar li.widget ul.product-categories li.cat-item {
+    margin-bottom: .25em;
+    padding: 2px 0;
+}
+.woocommerce ul.woocommerce-sidebar li.widget ul.product-categories li.cat-item > a {
+    color: #c45d5d;
+    font-weight: 400;
+}
+.woocommerce ul.woocommerce-sidebar li.widget ul.product-categories li.cat-item > a:hover {
+    color: #cc1818;
+    text-decoration: none;
+}
+.woocommerce ul.woocommerce-sidebar li.widget ul.product-categories li.cat-item span.count {
+    float: right;
+}
+
 
 /* media queries */
 

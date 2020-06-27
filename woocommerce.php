@@ -13,9 +13,11 @@
                         <?php woocommerce_content(); ?>
                     </div>
                     <div class="col-lg-3">
-                        <?php if ( is_active_sidebar('woocommerce-sidebar') ) : ?>
-                            <?php dynamic_sidebar('woocommerce-sidebar'); ?>
-                        <?php endif; ?>
+                        <ul class="woocommerce-sidebar">
+                            <?php if ( is_active_sidebar('woocommerce-sidebar') ) : ?>
+                                <?php dynamic_sidebar('woocommerce-sidebar'); ?>
+                            <?php endif; ?>
+                        </ul>
                     </div>
                 <?php endif; ?>
             </div>

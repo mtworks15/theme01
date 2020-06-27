@@ -407,3 +407,16 @@ remove_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_pro
 add_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 11);
 add_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_link_open', 10);
 add_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_link_close', 12);
+
+/* Override Product Search Form */
+function custom_woo_template_product_searchform( $echo = true ) {
+    $form = wc_get_template(
+        'product-custom_searchform.php',
+        array(
+            'index' => $product_search_form_index++,
+        )
+    );
+    return $form;
+}
+
+add_filter('get_product_search_form', 'custom_woo_template_product_searchform');

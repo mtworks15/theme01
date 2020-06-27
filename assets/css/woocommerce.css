@@ -96,8 +96,59 @@
     color: #f9f9f9;
 }
 
+/* Sidebar Widgets */
+.woocommerce ul.woocommerce-sidebar {
+    padding: 0 0 0 15px;
+}
+.woocommerce ul.woocommerce-sidebar li.widget {
+    margin-bottom: 2.5em;
+}
+.woocommerce ul.woocommerce-sidebar li.widget h3.widget-title {
+    margin-bottom: 1rem;
+}
+
+/* Sidebar Search Widget */
+.woocommerce ul.woocommerce-sidebar li.widget form.woocommerce-product-search {
+    display: flex;
+}
+.woocommerce ul.woocommerce-sidebar li.widget form.woocommerce-product-search input[type=search].search-field {
+    background-color: #fff;
+    border: 1px solid #bdbcbc;
+    border-right: none;
+    width: 100%;
+    padding: 10px 8px 10px 8px;
+}
+.woocommerce ul.woocommerce-sidebar li.widget form.woocommerce-product-search input[type=search].search-field:focus {
+    outline-width: 2px;
+    outline-style: solid;
+    outline-color: #000;
+}
+.woocommerce ul.woocommerce-sidebar li.widget form.woocommerce-product-search button[type=submit] {
+    background-color: #cecdcd;
+    border: 1px solid #bdbcbc;
+    padding: 10px 15px 10px 15px;
+}
+.woocommerce ul.woocommerce-sidebar li.widget form.woocommerce-product-search button[type=submit]:hover {
+    background-color: #bdbcbc;
+}
+.woocommerce ul.woocommerce-sidebar li.widget_product_search {
+    margin-top: .8em;
+}
+.woocommerce ul.woocommerce-sidebar li.widget_product_search h3.widget-title {
+    display: none;
+}
+
 
 /* media queries */
+
+@media (max-width: 991px) and (min-width: 768px) {
+
+    /* Sidebar Widgets */
+    .woocommerce ul.woocommerce-sidebar {
+        padding: 0;
+    }
+
+}
 
 @media (max-width: 767px) and (min-width: 576px) {
 
@@ -107,6 +158,11 @@
         /* to have space between columns, usually if having 2 column layout */
         margin-left: auto;
         margin-right: auto;
+    }
+
+    /* Sidebar Widgets */
+    .woocommerce ul.woocommerce-sidebar {
+        padding: 0;
     }
     
 }
@@ -131,6 +187,11 @@
         /* to have space between columns, usually if having 2 column layout */
         margin-left: auto;
         margin-right: auto;
+    }
+
+    /* Sidebar Widgets */
+    .woocommerce ul.woocommerce-sidebar {
+        padding: 0;
     }
 
 }
